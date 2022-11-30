@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class ="titulo">
+      Urna Eletrônica
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="urna">
+    <div class="visor">
+        {{numero1?numero1:"0"}} {{numero2?numero2:"0"}}
+    </div>
+    <div class="voto">
+      {{voto}} 
+      <img *ngIf="imagem.length > 0 " [src]="imagem">
+    </div>
+    <div class="linhas">
+        <div class="primeira linha">
+          <ion-button color="primary" (click)="Votar('1')">1</ion-button>
+          <ion-button color="primary" (click)="Votar('2')">2</ion-button>
+          <ion-button color="primary" (click)="Votar('3')">3</ion-button>
+        </div>
+        <div class="segunda linha">
+          <ion-button color="primary" (click)="Votar('4')">4</ion-button>
+          <ion-button color="primary" (click)="Votar('5')">5</ion-button>
+          <ion-button color="primary" (click)="Votar('6')">6</ion-button>
+        </div>
+        <div class="terceira linha">
+          <ion-button color="primary" (click)="Votar('7')">7</ion-button>
+          <ion-button color="primary" (click)="Votar('8')">8</ion-button>
+          <ion-button color="primary" (click)="Votar('9')">9</ion-button>
+        </div>
+        <div class="quarta linha">
+          <ion-button color="primary" (click)="Votar('0')">0</ion-button>
+        </div>
+        
+
+    </div>
+    <div class="quinta linha">
+      <ion-button class="branco" color="dark" (click)="branco()">Branco</ion-button>
+      <ion-button class="corrige" color="danger" (click)="corrige()">Corrige</ion-button>
+      <ion-button class="confima" color="success" (click)="confirma()">Confirma</ion-button>
+    </div>
+  </div>
+
+
+</ion-content>
